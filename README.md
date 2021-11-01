@@ -1,11 +1,13 @@
 # Duckie Town (Deep Learning homework)
 
-Group: AgentP
+Group: 
+- AgentP
 
 Members: 
 - Fazekas Lajos
-- Kozak Aron
-- Szasz Zsolt
+- Kozák Aron
+- Szász Zsolt
 
-Course: "Deep Learning Python es LUA alapokon" 
+Course name: 
+- "Deep Learning a gyakorlatban Python és LUA alapon" (VITMAV45) 
          
