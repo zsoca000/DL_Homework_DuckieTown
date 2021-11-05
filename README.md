@@ -16,3 +16,5 @@ Course name:
 - setting up the docker enviroment of Gym-Duckietown based on folowing repo: https://github.com/duckietown/gym-duckietown
 - generating our own map based on folowing repo: https://github.com/duckietown/map-utils/
 - implement a path finding alorithm on a generated map 
+
+## 2. Milestone
