@@ -11,7 +11,8 @@ from pyglet.window import key
 from gym_duckietown.envs import DuckietownEnv
 from os import path, remove
 
-
+# bemenet: button=0..4 - hogy melyik gombot nyomtuk le
+# kimenet: milyen PWM jelet kell beadni az env.step-be
 def button2action(button=0):
   
 	action = np.array([0.0, 0.0])
@@ -47,6 +48,7 @@ def button2action(button=0):
 
 	return action  
 
+# létrehozzuk a környezetet (env)
 def create_env():
   parser = argparse.ArgumentParser()
   parser.add_argument("--env-name", default="Duckietown-udem1-v0")
@@ -81,6 +83,9 @@ def create_env():
 
   return env
 
+# bemenet: button=0..4
+# végrehajtjuk az env.stepet
+# visszatérünk ennek a kimeneteivel
 def do_action(env, button = 4): 
     action = button2action(button)
     obs, reward, done, info = env.step(action)  
