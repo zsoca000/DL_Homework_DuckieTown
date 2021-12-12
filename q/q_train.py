@@ -1,3 +1,4 @@
+# Importok
 import create_env
 from create_env import create_env, button2action, do_action
 from q_model import q_model
@@ -7,6 +8,7 @@ import numpy as np
 from random import sample
 from keras.models import save, load_model
 
+# Model beolvasása. Itt továbbtanítunk. De a 14. és 15. sor megcserélésével indíthatunk új tanulást.
 dir_ = 'datas/'
 input_shape = (40, 80, 3)
 #model,input_shape = q_model()
@@ -16,16 +18,16 @@ model=load_model(dir_ + 'q_model')
 epochs = 100
 observetime = 500                          # Number of timesteps we will be acting on the game and observing results
 epsilon = 0.7                              # Probability of doing a random move
-decay = 0.98
+decay = 0.98				   # Ezzel csökkentjük epsilont
 gamma = 0.5                                # Discounted future reward. How much we care about steps further in time
 mb_size = 50                               # Learning minibatch size
 
 env = create_env()
 
-for epoch in range(epochs):
+for epoch in range(epochs):	# végigmegyünk az epochokon
 	
 	# FIRST STEP: Knowing what each action does (Observing)
-	
+	# környezet (env) és változók létrehozása
 	env.reset()
 	
 	obs = env.render('rgb_array')
@@ -33,7 +35,7 @@ for epoch in range(epochs):
 	state = np.expand_dims(state,axis=0)
 	done = False
 	D = deque()   
-
+	# actionok végrehajtása
 	for t in range(observetime):
 			env.render()
 			if np.random.rand() <= epsilon: # random action
@@ -50,7 +52,7 @@ for epoch in range(epochs):
 			if done:
 					env.reset()           # Restart game if it's finished
 					state = preprocess(x = env.render('rgb_array'))
-	#print('Observing Finished')
+
 	# SECOND STEP: Learning from the observations (Experience replay)
 	
 	#env.reset()
@@ -62,6 +64,7 @@ for epoch in range(epochs):
 	y_train = np.zeros((mb_size, 5))
 
 	for i in range(0, mb_size):
+			# beolvasás a minibatchből
 			state = minibatch[i][0]
 			action = np.argmax(minibatch[i][1])
 			reward = minibatch[i][2]
@@ -88,6 +91,6 @@ for epoch in range(epochs):
 	print('Epoch ', str(epoch), ' finished. next epsilon = ', str(epsilon))
 	print('--------------------------------------------------------------')
 	
-	if epoch%25 == 0:
+	if epoch%25 == 0:	# néha biztonsági mentést készítünk
 		model.save(dir_ + 'q_model')
 		print("   saved")
