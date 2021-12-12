@@ -1,22 +1,16 @@
 # Duckie Town (Deep Learning homework)
 
-Group name: 
+Csapatnév: 
 - AgentP
 
-Members: 
+Csapattagok: 
 - Fazekas Lajos
 - Kozák Aron
 - Szász Zsolt
 
-Course name: 
+A kurzus neve: 
 - "Deep Learning a gyakorlatban Python és LUA alapon" (VITMAV45) 
 
-## 1. Milestone
+A mappa tartalma:
 
-- setting up the docker enviroment of Gym-Duckietown based on folowing repo: https://github.com/duckietown/gym-duckietown
-- generating our own map based on folowing repo: https://github.com/duckietown/map-utils/
-- implement a path finding alorithm on a generated map 
-
-## 2. Milestone
-- dino
-- 
+`if (isAwesome){  return true}:`
