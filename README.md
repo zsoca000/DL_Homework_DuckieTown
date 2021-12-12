@@ -74,7 +74,7 @@ python3 imitaton_learning.py
 ```
 
 
-## Korrigálás:
+## Korrigálás
 
 Egy dolgot nem tudtunk megoldani. A pretrained modelleket és az általunk gyártott tanító adatokat méretük miatt nem tudtuk feltölteni a repoba ezekhez itt egy link:
 
