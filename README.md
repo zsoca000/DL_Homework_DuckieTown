@@ -13,4 +13,9 @@ A kurzus neve:
 
 A mappa tartalma:
 
-`if (isAwesome){  return true}:`
+```
+if (isAwesome){  return true}:
+```
+
+
+<copy-button> if (isAwesome){  return true}: <copy-button>
