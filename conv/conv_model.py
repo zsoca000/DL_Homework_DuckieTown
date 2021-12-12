@@ -5,6 +5,7 @@ from keras.layers import Dense, Flatten, Dropout, Conv2D, MaxPooling2D, BatchNor
 from keras.callbacks import EarlyStopping
 from keras.models import save, load_model
 
+
 # Hyperparameters:
 conv_size_1 = 32
 conv_size_2 = 64
@@ -45,21 +46,21 @@ def conv_model():
   model.add(BatchNormalization())
   model.add(Dropout( 0.3 ))
 
-  model.add(Conv2D(
-    conv_size_4,
-    kernel_size=(3, 3),
-    strides = (1, 1),
-    activation='relu'))
-  model.add(BatchNormalization())
-  model.add(Dropout( 0.3 ))
+  #model.add(Conv2D(
+    #conv_size_4,
+    #kernel_size=(3, 3),
+    #strides = (1, 1),
+    #activation='relu'))
+  #model.add(BatchNormalization())
+  #model.add(Dropout( 0.3 ))
 
-  model.add(Conv2D(
-    conv_size_5,
-    kernel_size=(3, 3),
-    strides = (1, 1),
-    activation='relu'))
-  model.add(BatchNormalization())
-  model.add(Dropout( 0.3 ))
+  #model.add(Conv2D(
+    #conv_size_5,
+    #kernel_size=(3, 3),
+    #strides = (1, 1),
+    #activation='relu'))
+  #model.add(BatchNormalization())
+  #model.add(Dropout( 0.3 ))
 
   model.add(Flatten())
   model.add(Dense(dense_size_1, activation='relu'))
