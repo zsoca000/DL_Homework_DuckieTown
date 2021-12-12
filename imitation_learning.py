@@ -1,3 +1,5 @@
+#==========================================IMPORTS=============================================
+
 from PIL import Image
 import argparse
 import sys
@@ -10,26 +12,7 @@ from pyglet.window import key
 from gym_duckietown.envs import DuckietownEnv
 from os import path,remove
 
-
-
-# ==================================================================================================
-
-dir = 'datas/' 
-
-
-if path.isfile(dir + 'names.npy'):
-  datas = np.load(dir + 'names.npy')
-  remove(dir + 'names.npy')
-  datas = np.append(datas, datas[len(datas)-1]+1)
-else:
-  datas = np.array([0])
-
-#print(type(datas))
-#exit()
-
-np.save(dir + 'names',datas)
-
-#====================================================================================================
+# ==========================================PARSING=============================================
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--env-name", default="Duckietown-udem1-v0")
@@ -58,6 +41,23 @@ if args.env_name and args.env_name.find("Duckietown") != -1:
     )
 else:
     env = gym.make(args.env_name)
+
+
+#===========================================FILE_HANDLING=============================================
+
+dir = 'datas/' 
+
+
+if path.isfile(dir + 'names.npy'):
+  datas = np.load(dir + 'names.npy')
+  remove(dir + 'names.npy')
+  datas = np.append(datas, datas[len(datas)-1]+1)
+else:
+  datas = np.array([0])
+  
+np.save(dir + 'names',datas)
+
+#=============================RUNING_THE_THE_MANUAL_CONTROLED_SIMULATION================================
 
 env.reset()
 env.render()
@@ -133,7 +133,7 @@ def update(dt):
     obs, reward, done, info = env.step(action)
     """print("step_count = %s, reward=%.3f" % (env.unwrapped.step_count, reward))"""
 
-#======================================================================================================
+ #=================================SAVE_DATAS_FROM_SIMATION_(IMITATING)===================================
     datas = np.load(dir+'names.npy')
     randname = str(datas[len(datas)-1])
     
@@ -142,9 +142,10 @@ def update(dt):
     
     y = button
     count = str(env.unwrapped.step_count)
-    namex = dir + 'x/' + randname + '_' + count + '.jpg'
-    namey = dir + 'y/' + randname + '_' + count 
+    namex = dir + 'x/' + randname + '_' + count + '.jpg' # pictures
+    namey = dir + 'y/' + randname + '_' + count          # button commands
     
+    # save them the right dir
     x.save(namex)
     np.save(namey, y)
 
@@ -162,10 +163,8 @@ def update(dt):
         print("done!")
         env.reset()
         env.render()
-#======================================================================================================
     
     env.render()
-
 
 pyglet.clock.schedule_interval(update, 1.0 / env.unwrapped.frame_rate)
 
