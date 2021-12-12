@@ -17,7 +17,7 @@ model, time_steps = lstm_model()
 dir = 'datas/'
 data_codes = np.load(dir+'names.npy') # the ids of runs
 
-#===============================DATA_READING=================================
+#=========================DATA_READING_AND_TRAINING============================
 
 
 b_s = 1 # the actula size of batch
