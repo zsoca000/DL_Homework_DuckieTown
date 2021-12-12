@@ -13,9 +13,13 @@ Csapattagok:
 
 ## Működés:
 
-A repoban található fileok akkor lesznek használhatóak
+Három mappa található a repoban (_conv,lstm,q_) ezek mindegyike tartalmazza a következőket:
 
-
+- a model-t definiáló program:   ```modelnev_model.py```
+- a model-t trainelni képes program:   ```modelnev_train_traintipus.py```
+- a model általi futtatást megvalósító program:   ```modelnev_play.py```
+- egy kézzel irányított agent adatainak kinyerését megvelósító program: ```imitation_learning.py```
+- egy az adatok előkészítését végző program: ```prep.py```
 
 
 
