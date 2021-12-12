@@ -11,7 +11,7 @@ Csapattagok:
 - Kozák Aron
 - Szász Zsolt
 
-## Tartalom:
+## Tartalom
 
 **1.** Egy kézzel irányított agent adatainak kinyerését megvelósító program: ```imitation_learning.py``` 
 
@@ -23,14 +23,22 @@ Csapattagok:
 - a model-t trainelni képes program:   ```modelnev_train_traintipus.py```
 - a model általi futtatást megvalósító program:   ```modelnev_play.py```
 
-## Használat:
+## Használat
 
+A környezet felállítása:
 ```
 git clone https://github.com/duckietown/gym-duckietown.git
 cd gym-duckietown
 pip3 install -e .
-
-cd nagy_hf
+git clone https://github.com/zsoca000/Duckie-Town-DL-Homework
+cd Duckie-Town-DL-Homework
+pip3 install -e .
+mv conv/* .
+mv lstm/* .
+mv q/* .
+rm -rf conv
+rm -rf lstm
+rm -rf q
 ```
 
 
