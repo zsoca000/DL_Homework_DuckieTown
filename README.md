@@ -77,5 +77,6 @@ python3 imitaton_learning.py
 ## Korrigálás:
 
 Egy dolgot nem tudtunk megoldani. A pretrained modelleket és az általunk gyártott tanító adatokat méretük miatt nem tudtuk feltölteni a repoba ezekhez itt egy link:https://bmeedu-my.sharepoint.com/:f:/g/personal/fazekas_lajos_edu_bme_hu/EmZwGOGwwA5LlgESh5elLHoBuBGWBf1BCBuZZuZMQ45wVA?e=RuyWsP. 
+
 Az a fontos, hogy a Duckie-Town-DL-Homework mappában kell legyen egy datas mappa és a pretrained modell mappája illetve a tanító adatok mappái (x,y), bármilyen őket felhasználó program esetén kell létezzenek.
 
