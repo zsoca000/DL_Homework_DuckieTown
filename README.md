@@ -18,4 +18,5 @@ Course name:
 - implement a path finding alorithm on a generated map 
 
 ## 2. Milestone
+- dino
 - 
