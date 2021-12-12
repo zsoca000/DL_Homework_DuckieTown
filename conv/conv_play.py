@@ -1,3 +1,4 @@
+#=========================================IMPORTING==============================================
 from tensorflow import keras
 from keras.models import save, load_model
 from PIL import Image
@@ -12,8 +13,13 @@ from pyglet.window import key
 from gym_duckietown.envs import DuckietownEnv
 from os import path,remove
 from prep import preprocess
+
+#=====================================LOAD_THE_MODEL============================================
+
 path = 'datas/' 
 model = load_model(path + 'reinf_learning_model')
+
+#=========================================PARSING==============================================
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--env-name", default="Duckietown-udem1-v0")
@@ -42,20 +48,25 @@ if args.env_name and args.env_name.find("Duckietown") != -1:
     )
 else:
     env = gym.make(args.env_name)
+
+#=======================================ACTUALLY_THE_PLAY==============================================
+
 while True:
 	env.reset()
 	env.render()
-                    # Game begins
+        
+	# init
 	observation = env.render('rgb_array')
 	state = preprocess(observation)
 	done = False
 	tot_reward = 0.0
-
+        
 	while not done:
 	    env.render()           
 	    state=img_to_array(state)  
 	    state/=255  
 	    state = np.expand_dims(state,axis=0)
+	    # predict the state
 	    y_pred = model.predict(state) 
 	    button = np.argmax(y_pred)
 	    action = np.array([0.0, 0.0])
