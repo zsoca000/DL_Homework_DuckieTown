@@ -5,7 +5,6 @@ from keras.layers import Dense, Flatten, Dropout, Conv2D, MaxPooling2D, BatchNor
 from keras.callbacks import EarlyStopping
 from keras.models import save, load_model
 
-
 # Hyperparameters:
 conv_size_1 = 32
 conv_size_2 = 64
