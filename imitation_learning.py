@@ -133,7 +133,7 @@ def update(dt):
     obs, reward, done, info = env.step(action)
     """print("step_count = %s, reward=%.3f" % (env.unwrapped.step_count, reward))"""
 
- #=================================SAVE_DATAS_FROM_SIMATION_(IMITATING)===================================
+ #=================================SAVE_DATAS_FROM_SIMULATION_(IMITATING)===================================
     datas = np.load(dir+'names.npy')
     randname = str(datas[len(datas)-1])
     
