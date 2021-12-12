@@ -54,6 +54,8 @@ else:
 
 #=============================BUTTON_PRESS-->ACTION==============================
 
+# convert button press to action
+
 def button2action(button = 0):
       
   wheel_distance = 0.102
@@ -97,7 +99,7 @@ while True:
    env.render()
    state = []
   
-   # the starting
+   # starting state
    for i in range(5):
      action = button2action()
      observation, reward, done, info = env.step(action)
@@ -108,18 +110,12 @@ while True:
    tot_reward = 0.0
    
    while not done:
-      env.render()           
-          
+      env.render()  # render         
+      
+      # refresh the state with the predicted button commands
       state_np = np.array(state).reshape(1,time_step,40,80,3)
       state_np /= 255
-      # state_np = np.expand_dims(state, axis=0)        
-      
-      
-      #print(state_np.shape)
-      #input()
-      
       y_pred = model.predict(state_np) 
-      
       
       button = np.argmax(y_pred)
       action = button2action(button)
