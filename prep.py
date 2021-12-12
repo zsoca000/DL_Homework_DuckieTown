@@ -1,4 +1,4 @@
-"""prepocessing"""  # Ez működik
+"""prepocessing"""   # Ez működik
 import numpy as np
 from PIL import Image
 # original size (800, 600)
