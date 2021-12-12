@@ -85,4 +85,4 @@ Az a fontos, hogy a Duckie-Town-DL-Homework mappában kell legyen egy datas mapp
 
 ## További fontos infók
 
-Sajnos mivel későn álltunk neki a feladat lényegi részének nagyon kevés időnk maradt a tanításra. Ezért is az lstm modellel alkotott hálónk nem jutott el okosabb manőverek végrehajtásáig. A Q learning és az imitation learning alapú konvolúciós modellek jó eredményeket értek el. Néhány spawn pointal akár megtettek közel egy kört is. Ezek a kész hálók is fent vannak a one drive linkben.
+Sajnos mivel későn álltunk neki a feladat lényegi részének nagyon kevés időnk maradt a tanításra. Ezért is az lstm modellel alkotott hálónk nem jutott el okosabb manőverek végrehajtásáig. A Q learning és az imitation learning alapú konvolúciós modellek jó eredményeket értek el. Néhány spawn pointal akár megtettek közel egy kört is. Ezek a kész hálók is fent vannak a onedrive linkben. Fogunk még tanítani az éjjel, ha azok nagyon jók lesznek azokat is feltöltjük is feltöltjük drivera.
