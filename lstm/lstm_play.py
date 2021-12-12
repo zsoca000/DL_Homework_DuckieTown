@@ -15,13 +15,13 @@ from gym_duckietown.envs import DuckietownEnv
 from os import path,remove
 from prep import preprocess
 
-#====================================DATAS=====================================
+#================================LOAD_THE_MODEL==================================
 
 path = 'datas/' 
 model = load_model(path + 'reinf_learning_model')
 time_step = 5
 
-#==================================PARSING=====================================
+#===================================PARSING=======================================
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--env-name", default="Duckietown-udem1-v0")
