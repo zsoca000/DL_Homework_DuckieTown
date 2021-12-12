@@ -1,3 +1,4 @@
+# Importok
 from tensorflow import keras
 from keras.models import save, load_model
 from PIL import Image
@@ -12,9 +13,10 @@ from gym_duckietown.envs import DuckietownEnv
 from os import path,remove
 from q_prep import preprocess
 from q_model import q_model
+#Model betöltése
 path = 'datas/' 
 model = load_model(path + 'q_model')
-
+# Környezet (env) létrehozása
 parser = argparse.ArgumentParser()
 parser.add_argument("--env-name", default="Duckietown-udem1-v0")
 parser.add_argument("--map-name", default="zigzag_dists")  # MAPNAME
