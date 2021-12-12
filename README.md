@@ -11,21 +11,26 @@ Csapattagok:
 - Kozák Aron
 - Szász Zsolt
 
-## Működés:
+## Tartalom:
 
-Három mappa található a repoban (_conv,lstm,q_) ezek mindegyike tartalmazza a következőket:
+**1.** Egy kézzel irányított agent adatainak kinyerését megvelósító program: ```imitation_learning.py``` 
+
+**2.** Egy az adatok előkészítését végző program: ```prep.py```
+
+**3.** Három mappa található a repoban (_conv,lstm,q_) ezek mindegyike tartalmazza a következőket:
 
 - a model-t definiáló program:   ```modelnev_model.py```
 - a model-t trainelni képes program:   ```modelnev_train_traintipus.py```
 - a model általi futtatást megvalósító program:   ```modelnev_play.py```
-- egy kézzel irányított agent adatainak kinyerését megvelósító program: ```imitation_learning.py```
-- egy az adatok előkészítését végző program: ```prep.py```
 
-
-
+## Használat:
 
 ```
-if (isAwesome){  return true}:
+git clone https://github.com/duckietown/gym-duckietown.git
+cd gym-duckietown
+pip3 install -e .
+
+cd nagy_hf
 ```
 
 
