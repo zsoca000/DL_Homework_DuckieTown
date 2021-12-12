@@ -11,7 +11,8 @@ Csapattagok:
 A kurzus neve: 
 - "Deep Learning a gyakorlatban Python és LUA alapon" (VITMAV45) 
 
-A mappa tartalma:
+
+
 
 ```
 if (isAwesome){  return true}:
