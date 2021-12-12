@@ -23,11 +23,12 @@ data_codes = np.load(dir+'names.npy')
 x_train = []
 y_train = []
 
+# iterating trough all datas
 for n in data_codes:
 
    i = 1
-   name_x = dir + 'x/' + str(n) + '_' + str(i) + '.jpg'
-   name_y = dir + 'y/' + str(n) + '_' + str(i) + '.npy' 
+   name_x = dir + 'x/' + str(n) + '_' + str(i) + '.jpg' # pictures
+   name_y = dir + 'y/' + str(n) + '_' + str(i) + '.npy' # button commands
    
    while path.isfile(name_x) and path.isfile(name_y):
      
@@ -44,7 +45,7 @@ for n in data_codes:
      name_x = dir + 'x/' + str(n) + '_' + str(i) + '.jpg'
      name_y = dir + 'y/' + str(n) + '_' + str(i) + '.npy'
      
-     print(len(x_train),'--->',name_x)
+     # print(len(x_train),'--->',name_x)
 
 print(len(x_train))
 
@@ -53,6 +54,7 @@ print(len(x_train))
 y_train = keras.utils.to_categorical(y_train,5)
 x_train = np.array(x_train).reshape(len(x_train),40,80,3)
 
+# train with fit (work with just thought (<50000) data obv)
 early_stopping = EarlyStopping(monitor='val_accuracy', patience=8)
 model.fit(x_train,
           y_train,
@@ -64,5 +66,3 @@ model.fit(x_train,
           shuffle=True)
           
 model.save(dir + 'reinf_learning_model')
-
-
