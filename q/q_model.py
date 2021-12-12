@@ -2,6 +2,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Conv2D, MaxPooling2D, Dropout, Flatten, Embedding
 from tensorflow.keras.optimizers import Adam
 
+# Csinálunk egy egyszerű modellt a Q learning-hez
 def q_model():
   input_shape = (40, 80, 3)
   model = Sequential() 
