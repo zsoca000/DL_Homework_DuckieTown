@@ -1,15 +1,21 @@
 # Duckie Town (Deep Learning homework)
 
-Csapatnév: 
-- AgentP
+"Deep Learning a gyakorlatban Python és LUA alapon" (VITMAV45)
+
+## Adatok
+
+Csapatnév: AgentP
 
 Csapattagok: 
 - Fazekas Lajos
 - Kozák Aron
 - Szász Zsolt
 
-A kurzus neve: 
-- "Deep Learning a gyakorlatban Python és LUA alapon" (VITMAV45) 
+## Működés:
+
+A repoban található fileok akkor lesznek használhatóak
+
+
 
 
 
