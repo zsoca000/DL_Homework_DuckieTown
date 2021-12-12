@@ -52,6 +52,7 @@ python3 MODELNEV_play.py
 
 
 A meglévő hálók továbbtanítása:
+
 (itt nem ajánlott a fit-et használni mert nagy adathalmazra nem működik)
 ```
 python3 MODELNEV_train_on_batch.py
