@@ -1,3 +1,5 @@
+# Link: https://youtu.be/t4z_1kOX0vM
+
 # Duckie Town (Deep Learning homework)
 
 "Deep Learning a gyakorlatban Python és LUA alapon" (VITMAV45)
